@@ -1,10 +1,11 @@
 package introduction;
 
-import java.io.*;
+/*
+ * If b <=0 or h <=0 , the output should be
+ * "java.lang.Exception: Breadth and height must be positive" without quotes.
+ * return b * h if both are greater than zero
+ */
 import java.util.*;
-import java.text.*;
-import java.math.*;
-import java.util.regex.*;
 
 public class StaticBlock {
 	public static boolean flag = true;
@@ -18,10 +19,11 @@ public class StaticBlock {
 		if (B <= 0 || H <= 0) {
 			System.out.println("java.lang.Exception: Breadth and height must be positive");
 			flag = false;
+			sc.close();
 		}
 	}
 
-	public static void main(String[] args) {
+	public static void main(String[] args) {// main method
 		if (flag) {// if B and H is positive
 			int area = B * H;
 			System.out.print(area);
@@ -31,9 +33,3 @@ public class StaticBlock {
 
 }// end of class
 
-/*
- * If b <=0 or h <=0 , the output should be
- * "java.lang.Exception: Breadth and height must be positive" without quotes.
- * 
- * return b * h if both are greater than zero
- */
