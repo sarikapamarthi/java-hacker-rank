@@ -3,6 +3,11 @@ package introduction;
 import java.util.*;
 import java.io.*;
 
+/*
+ * t = no of query a = series value 1 b = series value 2 a,b < n value print the
+ * series a + 2 pow 0 * b , a + pow 1 * b so on s0,s1 ,s2...sn-1
+ */
+
 class Loops2 {
 	public static void main(String[] argh) {
 		Scanner in = new Scanner(System.in);
@@ -26,8 +31,3 @@ class Loops2 {
 		in.close();
 	}
 }
-
-/*
- * t = no of query a = series value 1 b = series value 2 a,b < n value print the
- * series a + 2 pow 0 * b , a + pow 1 * b so on s0,s1 ,s2...sn-1
- */
