@@ -1,30 +1,27 @@
-package introduction;
+import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
-import java.util.*;
-import java.util.regex.*;
+/* Solution assumes we can't have the symbol "<" as text between tags */
+public class Solution{
+    public static void main(String[] args){
+        Scanner scan = new Scanner(System.in);
+        int testCases = Integer.parseInt(scan.nextLine());
+        
+        while (testCases-- > 0) {
+            String line = scan.nextLine();
+            
+            boolean matchFound = false;
+            Pattern r = Pattern.compile("<(.+)>([^<]+)</\\1>");
+            Matcher m = r.matcher(line);
 
-public class TagContentExtractor {
-	public static void main(String[] args) {
-
-		Scanner in = new Scanner(System.in);
-		int testCases = Integer.parseInt(in.nextLine());
-
-		// assigning pattern to be final
-		final Pattern pattern = Pattern.compile("<([\\p{Print}&&[^<>]]+)>([\\p{Print}&&[^<>]]+)</\\1>");
-		// if testcase is greater than zero
-		while (testCases > 0) {
-			final String line = in.nextLine();
-			final Matcher m = pattern.matcher(line);
-			if (m.find()) {
-				System.out.println(m.group(2));
-				while (m.find()) {
-					System.out.println(m.group(2));
-				}
-			} else {
-				System.out.println("None");
-			}
-			testCases--;
-		}
-	}
+            while (m.find()) {
+                System.out.println(m.group(2));
+                matchFound = true;
+            }
+            if ( ! matchFound) {
+                System.out.println("None");
+            }
+        }
+    }
 }
-
